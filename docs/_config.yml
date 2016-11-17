@@ -1,11 +1,9 @@
 # Site
 
 title: "Introduction to basic NetLogo"
-email: "cyberhelp@sesync.org"
-description: "Meet the NetLogo environment for agent-based modeling."
-styleurl: https://cdn.rawgit.com/sesync-ci/lesson-stylesheets/1.0.1
-#styleurl: https://rawgit.com/sesync-ci/lesson-stylesheets/master
-reveal: https://cdn.rawgit.com/hakimel/reveal.js/3.3.0
+worksheet:
+tag: v0.0
+instructor: Nick Magliocca
 authors:
   - Nick Magliocca
 lesson: 1
@@ -18,6 +16,16 @@ slide_sorter:
   - simple
   - spatial
   - conclude
+
+#####################################
+# Only modify content above or risk #
+# merge conflicts with upstream.    #
+#####################################
+
+# Style
+
+styleurl: https://cdn.rawgit.com/sesync-ci/lesson-style/1.0.1
+reveal: https://cdn.rawgit.com/hakimel/reveal.js/3.3.0
 
 # Jekyll
 
