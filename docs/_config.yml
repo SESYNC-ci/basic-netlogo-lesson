@@ -11,7 +11,7 @@ lesson: 1
 # Slides
 
 slide_sorter:
-  - title
+  - intro
   - overview
   - simple
   - spatial
