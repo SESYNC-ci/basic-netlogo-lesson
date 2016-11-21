@@ -8,3 +8,7 @@
 -- Only modify content below or risk --
 -- a merge conflict with upstream.   --
 -------------------------------------->
+
+[www.sesync.org]: httsp://www.sesync.org
+[lesson]: https://sesync-ci.github.io/basic-netlogo-lesson
+[slideshow]: https://sesync-ci.github.io/basic-netlogo-lesson/instructor
