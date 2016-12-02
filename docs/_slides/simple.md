@@ -120,7 +120,7 @@ Each of these is an entity-specific attribute.
 
 In NetLogo, colors have a numeric value. In all of the exercises we have been using the name of the color. This is because NetLogo recognizes 16 different color names. This does not mean that NetLogo only recognizes 16 colors. There are many shades in between these colors that can be used too. Here's a chart that shows the whole NetLogo color space:
 
-![]({{ site.baseurl }}/images/netlogo-colors.png)
+![]({{ site.baseurl }}/images/netlogo-colors.jpg)
 
 ===
 
