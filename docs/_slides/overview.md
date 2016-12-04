@@ -46,7 +46,7 @@ Buttons with arrows, like the 'go' button, will run until the user manually stop
 
 Many models also have a once button called "go once" or "step once" which is like "go" except that it advances the model by one tick (time step) instead of over and over. Using a once button like this lets you watch the progress of the model more closely.
 
-You can also stop a model with the 'Halt' item on the Tools menu, but you should only do this if the model is stuck for some reason. Using 'Halt' may interrupt the model in the middle of an action, which coudl create an error.
+You can also stop a model with the 'Halt' item on the Tools menu, but you should only do this if the model is stuck for some reason. Using 'Halt' may interrupt the model in the middle of an action, which could create an error.
 
 ===
 
