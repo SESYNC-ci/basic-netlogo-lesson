@@ -201,10 +201,6 @@ count turtles with [color = yellow]
 
 ===
 
-How random is Netlogo's random?
-
-===
-
 Make agents move
 
 ~~~
