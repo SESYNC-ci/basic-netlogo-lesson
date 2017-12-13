@@ -10,4 +10,4 @@
 -------------------------------------->
 
 [lesson]: https://sesync-ci.github.io/basic-netlogo-lesson
-[slideshow]: https://sesync-ci.github.io/basic-netlogo-lesson/instructor
+[slideshow]: https://sesync-ci.github.io/basic-netlogo-lesson/slides
