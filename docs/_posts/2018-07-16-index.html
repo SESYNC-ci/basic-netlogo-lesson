@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction to basic NetLogo</title>
+<meta name="description" content="Basics of Agent-Based Modeling with NetLogo">
+<link rel="canonical" href="https://sesync-ci.github.io/basic-netlogo-lesson/course/archive.html">
+
+	  <link rel="stylesheet" href="https://cdn.rawgit.com/sesync-ci/lesson-style/1.1/docs/css/static.css">
+  </head>
+  <body>
+	  <div class="page-content">
+	    <div class="wrapper">
+        
+        
+<h1 style="text-transform: none;" id="introduction-to-basic-netlogo">Introduction to basic NetLogo</h1>
+
+<p>Lesson 1 with <em>Nick Magliocca</em></p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#/slides/intro">Lesson Objectives</a></li>
+  <li><a href="#/slides/overview">The NetLogo environment</a></li>
+  <li><a href="#/slides/simple">Making a simple model</a></li>
+  <li><a href="#/slides/spatial">Spatial neighborhoods</a></li>
+  <li><a href="#/slides/conclude">Acknowledgements &amp; Support</a></li>
+</ul>
+
+<hr />
+
+<p><a name="/slides/intro"></a></p>
+
+<h2 id="lesson-objectives">Lesson Objectives</h2>
+
+<ol>
+  <li>Using the NetLogo user interface (UI) to run models</li>
+  <li>Modifying model parameters with the UI to run experiments</li>
+  <li>Simple commands</li>
+  <li>Procedures to alter and extend existing models</li>
+</ol>
+
+<p class="ToS"><a href="#/slides/intro">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/overview"></a></p>
+
+<h2 id="the-netlogo-environment">The NetLogo environment</h2>
+
+<p>Start the NetLogo application to begin a basic tour.</p>
+
+<p>The window you see is called the NetLogo integrated development environment (IDE). It has seveal parts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>IDE Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Interface</td>
+      <td>Control, run, and visualize model (current tab)</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>Description of model purpose, function, and features (middle tab)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>Model syntax (last tab)</td>
+    </tr>
+    <tr>
+      <td>View</td>
+      <td>Monitor, i.e. the ‘World’, used for real-time model visualization</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="model-library">Model Library</h2>
+
+<p>The NetLogo model library has many examples to explore.</p>
+
+<ul>
+  <li>Choose “Models Library” from the File menu.</li>
+  <li>Open the “Biology” folder.</li>
+  <li>Click on the model called “Wolf Sheep Predation”.</li>
+  <li>Press the “open” button.</li>
+</ul>
+
+<p>The Interface tab will fill up with lots of buttons, switches, sliders and monitors. These interface elements allow you to interact with the model. Buttons are blue; they set up, start, and stop the model. Sliders and switches are green; they alter model settings. Monitors and plots are beige; they display data.</p>
+
+<p>The ‘+ Add’ button along the top toolbar allows one to add additional features to the interface.</p>
+
+<p>When you first open the model, the Monitor is empty. To initialize the model with its default setting, press the ‘setup’ button.</p>
+
+<p>There are two different types of buttons: ‘once’ and ‘forever’.</p>
+
+<p>Buttons without arrows, like the ‘setup’ button, perform a task once and then pop back up when the task is completed.</p>
+
+<p>Buttons with arrows, like the ‘go’ button, will run until the user manually stops the task by clicking the same button again.</p>
+
+<p>Many models also have a once button called “go once” or “step once” which is like “go” except that it advances the model by one tick (time step) instead of over and over. Using a once button like this lets you watch the progress of the model more closely.</p>
+
+<p>You can also stop a model with the ‘Halt’ item on the Tools menu, but you should only do this if the model is stuck for some reason. Using ‘Halt’ may interrupt the model in the middle of an action, which could create an error.</p>
+
+<h2 id="the-info-tab">The ‘Info’ tab</h2>
+
+<p>On this screen, you will find useful ‘meta’ information about the model.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>What is it?</td>
+      <td>Model purpose and topic.</td>
+    </tr>
+    <tr>
+      <td>How it works</td>
+      <td>An overview of the functioning of the model, core behaviors, and model features.</td>
+    </tr>
+    <tr>
+      <td>How to use it</td>
+      <td>Describes the buttons, sliders, and parameters.</td>
+    </tr>
+    <tr>
+      <td>Things to notice</td>
+      <td>What you see in plots and display when running model, as well as questions the model can answer.</td>
+    </tr>
+    <tr>
+      <td>Things to try</td>
+      <td>Experiments you can try.</td>
+    </tr>
+    <tr>
+      <td>Extend the model</td>
+      <td>Future enhancements or interesting modifications.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There may also be additional sections, such as: NetLogo Features, Related Models, Credits, and How to Cite.</p>
+
+<h2 id="the-code-tab">The ‘Code’ tab</h2>
+
+<ul>
+  <li>Extensions</li>
+  <li>Global variables</li>
+  <li>Attributes of agents (turtles), patches (environment agents)</li>
+  <li>Button procedures</li>
+  <li>Other procedures</li>
+</ul>
+
+<h2 id="defining-agents-and-the-environment-in-netlogo">Defining Agents and the Environment in NetLogo:</h2>
+
+<ul>
+  <li>Agents are called turtles (can be mobile)</li>
+  <li>The environment consists of patches (not mobile)</li>
+</ul>
+
+<h2 id="speed-slider">Speed Slider</h2>
+
+<p>The speed slider allows you to control the speed of a model, that is, the speed at which turtles move, patches change color, and so on.</p>
+
+<p>When you move the slider to the left the model slows down so there are longer pauses between each tick (time step). That makes it easier to see what is happening. You might even slow the model down so far as to see exactly what a single turtle is doing.</p>
+
+<p>When you move the speed slider to the right the model speeds up. NetLogo will start skipping frames, that is, it won’t update the view at the end of every tick, only some ticks. Updating takes time, so fewer view updates means the model progresses faster.</p>
+
+<p>Note that if you push the speed slider well to the right, the view may update so infrequently that the model appears to have slowed down. It hasn’t, as you can see by watching the tick counter race ahead. Only the frequency of view updates has lessened.</p>
+
+<p>Let’s see it in action. If you haven’t done so already, press the “setup” button to initialize the model with current settings. Now press “go”.</p>
+
+<p>What model dynamics do you see? How many ‘ticks’ did it take?</p>
+
+<h2 id="exercise-1">Exercise 1</h2>
+
+<p>Change to the ‘Info’ tab to learn what each of the sliders and switches represent. Think about what  could be changed to get a stable outcome.</p>
+
+<p>Note that in order to re-run the model with new settings, you must click the ‘setup’ button first before hitting ‘go’ again.</p>
+
+<p>Post your green sticky note when you have get both sheep and wolf populations to persist.</p>
+
+<h2 id="gathering-information-plots-and-monitors">Gathering Information: Plots and Monitors</h2>
+
+<h3 id="plots">Plots</h3>
+
+<p>The plot in Wolf Sheep Predation contains three lines: sheep, wolves, and grass / 4. (The grass count is divided by four so it doesn’t make the plot too tall.) The lines show what’s happening in the model over time. The plot legend shows what each line indicates. In this case, it’s the population counts.</p>
+
+<p>When a plot gets close to becoming filled up, the horizontal axis is compressed and all of the data from before gets squeezed into a smaller space. In this way, more room is made for the plot to grow.</p>
+
+<p>If you want to save the data from a plot to view or analyze it in another application, use the “Export Plot” item on the File menu. It saves the plot data in a format that can by read back by spreadsheet and database programs such as Excel. You can also export a plot by right-clicking it and choosing “Export…” from the popup menu.</p>
+
+<h3 id="monitors">Monitors</h3>
+
+<p>Monitors are another means of displaying information from a model. Monitors in Wolf Sheep Predation model track the total population of sheep, wolves, and grass. (Remember, the amount of grass is divided by four to keep the plot from getting too tall.)</p>
+
+<p>The numbers displayed in the monitors change as the model runs, whereas the plots show you data from the whole course of the model run.</p>
+
+<p>These are particularly useful if you have a quantitative indicator of model dynamics that you would like to track in real time.</p>
+
+<h2 id="controlling-the-view">Controlling the View</h2>
+
+<p>Like any other simulation software, visualization is computationally costly. You can supress model output in the View by toggling the view updates control.</p>
+
+<p>Press ‘go’. Note the speed of simulation.</p>
+
+<p>Uncheck the ‘View Updates’ box. What happened?</p>
+
+<p>Turning off updates and moving the speed slider all the way to the right will greatly improve simulation time if you just want to produce model results to analyze later.</p>
+
+<p>The size of the view is determined by five separate settings: min-pxcor, max-pxcor, min-pycor, max-pycor, and patch size. Let’s take a look at what happens when we change the size of the view in the “Wolf Sheep Predation” model.</p>
+
+<p>There are more model settings than there’s room for in the toolbar. The “Settings…” button lets you get to the rest of the settings.
+By modifying the max-pxcor or max-pycor settings, you can change the extent of the model view. With all else the same, this also increases the number of patches. Note that the grass monitor changes values when you increase the model extent.</p>
+
+<p>Modify the patch size, however, does not change the number of patches.</p>
+
+<h2 id="more-on-the-model-library">More on the Model Library</h2>
+
+<p>A tremendous resource for code ideas! The library contains four sections: Sample Models, Curricular Models, Code Examples, and HubNet Activities.</p>
+
+<h3 id="sample-models">Sample Models</h3>
+
+<p>The Sample Models section is organized by subject area and currently contains more than 200 models. We are continuously working on adding new models to it, so come visit this section at a later date to view the new additions to the library.
+Some of the folders in Sample Models have folders inside them labeled “(unverified)”. These models are complete and functional, but are still in the process of being reviewed for content, accuracy, and quality of code.</p>
+
+<h3 id="curricular-models">Curricular Models</h3>
+
+<p>These are models designed to be used in schools in the context of curricula developed by the CCL at Northwestern University. Some of these are models are also listed under Sample Models; others are unique to this section. See the Info tabs of the models for more information on the curricula they go with.</p>
+
+<h3 id="code-examples">Code Examples</h3>
+
+<p>These are simple demonstrations of particular features of NetLogo. They’ll be useful to you later when you’re extending existing models or building new ones. For example, if you wanted to add a histogram to your model, you’d look at “Histogram Example” to find out how.</p>
+
+<h3 id="hubnet-activities">HubNet Activities</h3>
+
+<p>This section contains participatory simulations for use with groups. For more information about HubNet, see the HubNet Guide.</p>
+
+<p class="ToS"><a href="#/slides/overview">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/simple"></a></p>
+
+<h2 id="making-a-simple-model">Making a simple model</h2>
+
+<p>The Command Center is found in the Interface tab. It allows you to enter commands or directions to a model. Commands are instructions you can give to NetLogo’s agents: turtles, patches, links, and the observer.</p>
+
+<p>Start by creating a new model file:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">File &gt; New</code></p>
+</blockquote>
+
+<h2 id="model-objective">Model Objective</h2>
+
+<p>We are going ask some patches to turn green, create a set of agents, and have them move around. We will ask the patches to count how many agents are on them.</p>
+
+<h2 id="commands">Commands</h2>
+
+<p>Into the Command Center input (at the <code class="highlighter-rouge">observer&gt;</code> prompt), type the following:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>count patches
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>observer: 1089
+</code></pre>
+</div>
+
+<p>Why do we get that answer?</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask n-of 20 patches [set pcolor green]
+count patches with [pcolor = green]
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>observer: 20
+</code></pre>
+</div>
+
+<p>Create some agents</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>create-turtles 10 [set size 3]
+</code></pre>
+</div>
+
+<p>Make them move</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask turtles [rt random 360 fd 10]
+</code></pre>
+</div>
+
+<p>What are <code class="highlighter-rouge">rt</code> and <code class="highlighter-rouge">fd</code>?</p>
+
+<p>If you need help, type a command at the <code class="highlighter-rouge">observer&gt;</code> prompt and hit F1.</p>
+
+<p>What did we just tell our agents to do? Here is what each command in the ‘move-turtles’ procedure does:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ask turtles [ ... ]</code> says that each turtle should run the commands in the brackets.</li>
+  <li><code class="highlighter-rouge">rt random 360</code> is another command that uses a reporter.
+    <ul>
+      <li>each turtle picks a random whole number between 0 and 359. (random doesn’t include the number you give it as a possible result.)</li>
+      <li>each turtle turns right (or <code class="highlighter-rouge">rt</code> for short) this number of degrees</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">fd 10</code> makes the turtle move forward ten steps.</li>
+</ul>
+
+<h2 id="change-agent-appearances">Change agent appearances</h2>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask n-of random 10 turtles [set color red set shape "circle"]
+ask n-of 10 turtles [set color red set shape “circle”]
+</code></pre>
+</div>
+
+<p>To see shape options:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>show shapes
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>observer: ["default" "airplane" "arrow" "box" "bug" "butterfly" "car" "circle" "circle 2" "cow" "cylinder" "dot" "face happy" "face neutral" "face sad" "fish" "flag" "flower" "house" "leaf" "line" "line half" "pentagon" "person" "plant" "sheep" "square" "square 2" "star" "target" "tree" "triangle" "triangle 2" "truck" "turtle" "wheel" "wolf" "x"]
+</code></pre>
+</div>
+
+<p>Maybe something more uplifting …</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask n-of random 10 turtles [set color yellow set shape "face happy"]
+</code></pre>
+</div>
+
+<h2 id="interlude-colors-in-netlogo">Interlude: Colors in NetLogo</h2>
+
+<p>Notice that we used ‘pcolor’ to change the color of patches, and ‘color’ to change the color of turtles. 
+Each of these is an entity-specific attribute.</p>
+
+<p>In NetLogo, colors have a numeric value. In all of the exercises we have been using the name of the color. This is because NetLogo recognizes 16 different color names. This does not mean that NetLogo only recognizes 16 colors. There are many shades in between these colors that can be used too. Here’s a chart that shows the whole NetLogo color space:</p>
+
+<p><img src="/basic-netlogo-lesson/images/netlogo-colors.jpg" alt="" /></p>
+
+<p>And if you don’t have the chart …</p>
+
+<p>You can send commands to specific entities by changing the object of the command line. Choose “turtles” from the popup menu in the Command Center (or use the tab key).</p>
+
+<p>For example, when you type:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>set color red
+</code></pre>
+</div>
+
+<p>this does the same thing as if you had typed:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>set color 15
+</code></pre>
+</div>
+
+<p>If you want an intermediate shade, but don’t know the number, adding or subtracting a number from a name will work too.</p>
+
+<p>And you can get a lighter or darker version of the same color by using a number that is a little larger or a little smaller, as follows.</p>
+
+<p>Choose “patches” from the popup menu in the Command Center (or use the tab key).</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>set pcolor red - 2 
+</code></pre>
+</div>
+
+<p>(The spacing around the “-“ is important.)</p>
+
+<p>By subtracting from red, you make it darker.</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>set pcolor red + 2 
+</code></pre>
+</div>
+
+<p>By adding to red, you make it lighter.</p>
+
+<h2 id="back-to-the-model">Back to the model</h2>
+
+<p>Count your turtles</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>count turtles
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>observer&gt; show count turtles
+observer: 10
+</code></pre>
+</div>
+
+<p>Notice that NetLogo accepts this even though it is shorthand. The full command is printed in the Command Center window. You can recall through past commands with the ‘up’ arrow.</p>
+
+<p>Count by agent attribute:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>count turtles with [color = yellow]
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>0
+</code></pre>
+</div>
+
+<p>Make agents move</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask n-of 20 patches [set pcolor green]
+ask turtles [move to one-of patches with [pcolor = green]]
+</code></pre>
+</div>
+
+<p>Why didn’t this work?</p>
+
+<p>The Netlogo dictionary can help: <code class="highlighter-rouge">File &gt; Help</code></p>
+
+<p>Look at turtle commands that are similar. We just need to add a dash in between “move” and “to”.</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask turtles [move-to one-of patches with [pcolor = green]]
+</code></pre>
+</div>
+
+<h2 id="extracting-information">Extracting information</h2>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask patches with [pcolor = green][show count turtles-here]
+ask turtles with [color = red][die]
+count turtles
+clear-all
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>(patch 13 -2): 1
+(patch -13 13): 1
+(patch 3 -7): 2
+(patch 1 -4): 1
+(patch -7 0): 1
+(patch 2 -14): 1
+(patch 7 -1): 0
+(patch 8 4): 0
+(patch -3 -11): 0
+(patch -15 5): 0
+(patch -1 3): 0
+(patch 0 -14): 0
+(patch -14 -1): 0
+(patch -5 -15): 2
+(patch 3 -15): 0
+(patch 15 -14): 0
+(patch -7 8): 0
+(patch -7 15): 0
+(patch 13 -4): 0
+(patch -5 10): 1
+observer&gt; show count turtles
+observer: 10
+</code></pre>
+</div>
+
+<h2 id="more-online">More online</h2>
+
+<p>Thus far, we have been working with complete sets of entities (e.g., all turtles), but you may want to refer to specific agents or sub-groups.</p>
+
+<p>For instructions on how to access, manipulate, and monitor specific entities, see <a href="https://ccl.northwestern.edu/netlogo/docs/tutorial2.html" target="_blank">Tutorial #2</a> in the NetLogo User Manual.</p>
+
+<p class="ToS"><a href="#/slides/simple">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/spatial"></a></p>
+
+<h2 id="spatial-neighborhoods">Spatial neighborhoods</h2>
+
+<p>The following commands would be useful for modeling mobility, segregation/aggregation, growth, and foraging</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>create-turtles 1
+ask turtles [ask neighbors [set pcolor green]]
+</code></pre>
+</div>
+
+<p>The default neighborhood is a Moore neighborhood of 8 adjacent patches</p>
+
+<p>The alternative Von Neumann neighborhood has 4 neighbors, one in each cardinal directions:</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask turtles [ask neighbors4 [set pcolor yellow]]
+</code></pre>
+</div>
+
+<h2 id="agent-movement">Agent movement</h2>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask turtles [move-to one-of neighbors4]
+</code></pre>
+</div>
+
+<p>Repeat. See what happens when you remove the “4”.</p>
+
+<p>Move agent and change patch attribute</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>ask turtles [move-to one-of neighbors ask patch-here [set pcolor red]]
+</code></pre>
+</div>
+
+<p>Repeat. See what happens when add to neighbors 4.</p>
+
+<p>How many red patches?</p>
+
+<div class="input highlighter-rouge"><pre class="highlight"><code>count patches with [pcolor = red]
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>observer: 1
+</code></pre>
+</div>
+
+<p class="ToS"><a href="#/slides/spatial">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/conclude"></a></p>
+
+<h2 id="acknowledgements--support">Acknowledgements &amp; Support</h2>
+
+<p>Portions of the instructional materials are adopted from <a href="http://www.gisagents.org/" target="_blank">Andrew Crooks</a>, Melanie Swartz, and the <a href="https://ccl.northwestern.edu/netlogo/docs/sample.html" target="_blank">NetLogo User Manual</a>.</p>
+
+<p class="ToS"><a href="#/slides/conclude">Top of Section</a></p>
+
+<hr />
+
+
+
+	    </div>
+	  </div>
+  </body>
+</html>
