@@ -24,7 +24,7 @@ Into the Command Center input (at the `observer>` prompt), type the following:
 ~~~
 count patches
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 observer: 1089
@@ -39,7 +39,7 @@ Why do we get that answer?
 ask n-of 20 patches [set pcolor green]
 count patches with [pcolor = green]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 observer: 20
@@ -53,7 +53,7 @@ Create some agents
 ~~~
 create-turtles 10 [set size 3]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -62,7 +62,7 @@ Make them move
 ~~~
 ask turtles [rt random 360 fd 10]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 What are `rt` and `fd`? 
 
@@ -86,7 +86,7 @@ What did we just tell our agents to do? Here is what each command in the 'move-t
 ask n-of random 10 turtles [set color red set shape "circle"]
 ask n-of 10 turtles [set color red set shape “circle”]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -95,7 +95,7 @@ To see shape options:
 ~~~
 show shapes
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 observer: ["default" "airplane" "arrow" "box" "bug" "butterfly" "car" "circle" "circle 2" "cow" "cylinder" "dot" "face happy" "face neutral" "face sad" "fish" "flag" "flower" "house" "leaf" "line" "line half" "pentagon" "person" "plant" "sheep" "square" "square 2" "star" "target" "tree" "triangle" "triangle 2" "truck" "turtle" "wheel" "wolf" "x"]
@@ -109,7 +109,7 @@ Maybe something more uplifting ...
 ~~~
 ask n-of random 10 turtles [set color yellow set shape "face happy"]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -133,14 +133,14 @@ For example, when you type:
 ~~~
 set color red
 ~~~
-{:.input}
+{:.input title="Console"}
 
 this does the same thing as if you had typed:
 
 ~~~
 set color 15
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -153,7 +153,7 @@ Choose "patches" from the popup menu in the Command Center (or use the tab key).
 ~~~
 set pcolor red - 2 
 ~~~
-{:.input}
+{:.input title="Console"}
 
 (The spacing around the "-" is important.) 
 
@@ -162,7 +162,7 @@ By subtracting from red, you make it darker.
 ~~~
 set pcolor red + 2 
 ~~~
-{:.input}
+{:.input title="Console"}
 
 By adding to red, you make it lighter. 
 
@@ -175,7 +175,7 @@ Count your turtles
 ~~~
 count turtles
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 observer> show count turtles
@@ -192,7 +192,7 @@ Count by agent attribute:
 ~~~
 count turtles with [color = yellow]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 0
@@ -207,7 +207,7 @@ Make agents move
 ask n-of 20 patches [set pcolor green]
 ask turtles [move to one-of patches with [pcolor = green]]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -220,7 +220,7 @@ Look at turtle commands that are similar. We just need to add a dash in between 
 ~~~
 ask turtles [move-to one-of patches with [pcolor = green]]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ===
 
@@ -232,7 +232,7 @@ ask turtles with [color = red][die]
 count turtles
 clear-all
 ~~~
-{:.input}
+{:.input title="Console"}
 
 ~~~
 (patch 13 -2): 1
