@@ -2,6 +2,9 @@ title: Introduction to NetLogo
 lesson: 1
 tag: v0.0
 instructor: Nick Magliocca
+lifecycle: alpha # status for lifecycle badge
+badgecolor: pink # color for lifecycle badge
+warning: true # whether to include note about lifecycle status
 authors:
   - Nick Magliocca
 sorter:
