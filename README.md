@@ -1,5 +1,5 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-alpha-pink.svg)](https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/lesson/lesson-lifecycle.md#alpha)
-[![DOI](https://zenodo.org/badge/71577677.svg)](https://zenodo.org/badge/latestdoi/71577677)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5705591.svg)](https://doi.org/10.5281/zenodo.5705591)
 
 ## Basic Netlogo Lesson
 

@@ -5,7 +5,7 @@ instructor: Nick Magliocca
 lifecycle: alpha # status for lifecycle badge
 badgecolor: pink # color for lifecycle badge
 warning: true # whether to include note about lifecycle status
-doi: 10.5281/zenodo.5705592
+doi: 10.5281/zenodo.5705591
 authors:
   - Nick Magliocca
 sorter:
